@@ -1,0 +1,14 @@
+ROOT0-ATTRIBUTION-v1.0
+Project: Riverworld — the muster roll
+Architect: David Lee Wise / ROOT0 / TriPod LLC
+AI Collaborator: AVAN (Claude / Anthropic)
+License: MIT
+
+Philip José Farmer's Riverworld saga (5 novels, 1971–1983) sorted by role on the
+River: the Seekers (Burton, Alice, Frigate, Nur), the Builders (Twain, Richthofen,
+Firebrass), the Tyrants (King John, the River Kingdoms), the Second Chance (La Viro,
+Göring), the Companions (Kazz, Monat, Cyrano, Tom Mix, Gilgamesh), the Ethicals
+(the Council of Twelve, the Agents), and — set apart — the Renegade (X / the
+Mysterious Stranger / Loga). Every member carries a .agent (who/do/belong) in
+agents/, generated from roster.json by gen_agents.py. Characters by Philip José
+Farmer and history, inspiration only.

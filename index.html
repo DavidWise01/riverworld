@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>RIVERWORLD — the muster roll</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;800&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --ground:        #0a1014;
+    --ground-2:      #0e1820;
+    --mist:          #e3e6e0;
+    --mist-dim:      #9aa6a3;
+    --teal:          #1f8a8a;
+    --teal-glow:     #34c6c6;
+    --gold:          #d9c46a;
+    --green:         #3a7d4a;
+    --violet:        #8a8ad0;
+    --tower:         #cfe6e6;
+    --hair:          rgba(227,230,224,0.10);
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: var(--ground);
+    color: var(--mist);
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: 18px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  body {
+    background:
+      radial-gradient(ellipse 120% 80% at 50% -10%, rgba(52,198,198,0.08), transparent 60%),
+      radial-gradient(ellipse 90% 60% at 50% 4%, rgba(217,196,106,0.06), transparent 55%),
+      linear-gradient(180deg, var(--ground-2) 0%, var(--ground) 40%, var(--ground) 100%);
+    background-attachment: fixed;
+  }
+
+  /* faint starfield */
+  .stars {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    background-image:
+      radial-gradient(1px 1px at 20% 30%, rgba(227,230,224,0.5), transparent),
+      radial-gradient(1px 1px at 70% 12%, rgba(227,230,224,0.4), transparent),
+      radial-gradient(1px 1px at 42% 18%, rgba(207,230,230,0.5), transparent),
+      radial-gradient(1px 1px at 85% 35%, rgba(227,230,224,0.3), transparent),
+      radial-gradient(1px 1px at 12% 8%,  rgba(227,230,224,0.4), transparent),
+      radial-gradient(1.4px 1.4px at 58% 6%, rgba(217,196,106,0.4), transparent);
+    opacity: 0.6;
+  }
+
+  .wrap {
+    position: relative;
+    z-index: 1;
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 0 28px 100px;
+  }
+
+  /* ---------- MASTHEAD ---------- */
+  .masthead {
+    position: relative;
+    padding: 96px 0 40px;
+    text-align: center;
+    overflow: hidden;
+  }
+  .river-svg {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+    width: 1100px;
+    max-width: 160%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+    opacity: 0.9;
+  }
+  .river-stroke {
+    fill: none;
+    stroke: var(--teal);
+    stroke-width: 1.4;
+    stroke-linecap: round;
+    filter: drop-shadow(0 0 6px rgba(52,198,198,0.5));
+    stroke-dasharray: 4 0;
+    opacity: 0.55;
+    animation: shimmer 9s ease-in-out infinite;
+  }
+  @keyframes shimmer {
+    0%, 100% { opacity: 0.40; }
+    50%      { opacity: 0.70; }
+  }
+  .tower-light {
+    fill: var(--tower);
+    filter: drop-shadow(0 0 8px var(--teal-glow));
+    animation: pulse 6s ease-in-out infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 0.6; }
+    50%      { opacity: 1; }
+  }
+
+  .masthead > * { position: relative; z-index: 1; }
+
+  h1.title {
+    font-family: "Cinzel", serif;
+    font-weight: 800;
+    font-size: clamp(48px, 11vw, 104px);
+    letter-spacing: 0.14em;
+    margin: 0;
+    color: var(--mist);
+    text-shadow: 0 0 28px rgba(52,198,198,0.25);
+  }
+  .subtitle {
+    font-family: "Space Mono", monospace;
+    font-size: 12.5px;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--teal-glow);
+    margin: 18px 0 0;
+    opacity: 0.85;
+  }
+  .epigraph {
+    font-family: "Cormorant Garamond", serif;
+    font-style: italic;
+    font-size: clamp(19px, 2.6vw, 25px);
+    line-height: 1.62;
+    color: var(--mist);
+    max-width: 680px;
+    margin: 44px auto 0;
+    opacity: 0.94;
+  }
+  .note {
+    font-size: 15.5px;
+    color: var(--mist-dim);
+    max-width: 600px;
+    margin: 34px auto 0;
+    font-style: italic;
+  }
+  .byline {
+    font-family: "Cinzel", serif;
+    font-size: 14px;
+    letter-spacing: 0.18em;
+    color: var(--gold);
+    margin: 18px 0 0;
+    opacity: 0.9;
+  }
+
+  /* ---------- SECTION HEADINGS ---------- */
+  .section-label {
+    font-family: "Cinzel", serif;
+    font-weight: 600;
+    font-size: 13px;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: var(--mist-dim);
+    text-align: center;
+    margin: 96px 0 8px;
+  }
+  .section-rule {
+    width: 56px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--teal-glow), transparent);
+    margin: 0 auto 44px;
+    opacity: 0.7;
+  }
+
+  /* ---------- LINEAGE ---------- */
+  .lineage {
+    max-width: 620px;
+    margin: 0 auto;
+    border-left: 1px solid var(--hair);
+    padding-left: 0;
+  }
+  .book {
+    position: relative;
+    padding: 16px 0 16px 34px;
+    border-left: 1px solid var(--hair);
+    margin-left: 8px;
+  }
+  .book::before {
+    content: "";
+    position: absolute;
+    left: -5px;
+    top: 24px;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: var(--teal);
+    box-shadow: 0 0 8px rgba(52,198,198,0.6);
+  }
+  .book.first::before {
+    background: var(--gold);
+    box-shadow: 0 0 10px rgba(217,196,106,0.8);
+  }
+  .book .bk-title {
+    font-family: "Cinzel", serif;
+    font-size: clamp(18px, 3vw, 22px);
+    color: var(--mist);
+    letter-spacing: 0.04em;
+  }
+  .book .bk-year {
+    font-family: "Space Mono", monospace;
+    font-size: 12.5px;
+    color: var(--mist-dim);
+    letter-spacing: 0.1em;
+    margin-top: 3px;
+  }
+  .hugo {
+    display: inline-block;
+    font-family: "Space Mono", monospace;
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold);
+    border: 1px solid rgba(217,196,106,0.45);
+    border-radius: 3px;
+    padding: 1px 7px;
+    margin-left: 12px;
+    vertical-align: middle;
+  }
+
+  /* ---------- THE ROLL ---------- */
+  .roll-class {
+    margin: 64px 0 0;
+    border-left: 3px solid var(--cls, var(--teal));
+    padding: 4px 0 4px 24px;
+  }
+  .cls-head {
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-bottom: 6px;
+  }
+  .cls-tag {
+    font-family: "Space Mono", monospace;
+    font-size: 10.5px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ink, #fff);
+    background: var(--cls, var(--teal));
+    padding: 3px 10px;
+    border-radius: 3px;
+  }
+  .cls-label {
+    font-family: "Cinzel", serif;
+    font-weight: 600;
+    font-size: clamp(24px, 4vw, 32px);
+    color: var(--mist);
+    letter-spacing: 0.05em;
+  }
+  .cls-spec {
+    font-style: italic;
+    font-size: 16px;
+    color: var(--mist-dim);
+    margin: 0 0 20px;
+  }
+  .members {
+    display: grid;
+    gap: 22px;
+  }
+  .member {
+    position: relative;
+  }
+  .m-name {
+    font-family: "Cinzel", serif;
+    font-size: clamp(17px, 2.4vw, 20px);
+    color: var(--mist);
+    letter-spacing: 0.03em;
+    margin-bottom: 2px;
+  }
+  .m-spec {
+    font-size: 17px;
+    line-height: 1.58;
+    color: rgba(227,230,224,0.82);
+    max-width: 760px;
+  }
+
+  /* Ethicals — coolly remote, above */
+  .roll-class.ethicals {
+    margin-top: 92px;
+    background:
+      radial-gradient(ellipse 80% 120% at 0% 0%, rgba(138,138,208,0.06), transparent 60%);
+  }
+  .ethicals .cls-label,
+  .ethicals .m-name { color: var(--violet); }
+  .ethicals .m-spec { color: rgba(178,178,222,0.82); }
+
+  /* Second Chance — warm golden */
+  .roll-class.secondchance {
+    background:
+      radial-gradient(ellipse 80% 120% at 0% 0%, rgba(217,196,106,0.06), transparent 60%);
+  }
+  .secondchance .m-name { color: var(--gold); }
+
+  /* ---------- THE RENEGADE ---------- */
+  .renegade {
+    text-align: center;
+    margin: 120px auto 0;
+    max-width: 720px;
+    padding: 60px 24px;
+    border-top: 1px solid var(--hair);
+    border-bottom: 1px solid var(--hair);
+    position: relative;
+  }
+  .renegade .star-mark {
+    width: 64px;
+    height: 64px;
+    margin: 0 auto 28px;
+    display: block;
+  }
+  .star-glow {
+    fill: var(--gold);
+    filter: drop-shadow(0 0 14px rgba(217,196,106,0.85));
+    animation: starpulse 5s ease-in-out infinite;
+  }
+  @keyframes starpulse {
+    0%, 100% { opacity: 0.75; }
+    50%      { opacity: 1; }
+  }
+  .ren-tag {
+    font-family: "Space Mono", monospace;
+    font-size: 11px;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 18px;
+  }
+  .ren-name {
+    font-family: "Cinzel", serif;
+    font-weight: 800;
+    font-size: clamp(28px, 5vw, 42px);
+    color: var(--gold);
+    letter-spacing: 0.08em;
+    margin-bottom: 24px;
+    text-shadow: 0 0 24px rgba(217,196,106,0.3);
+  }
+  .ren-spec {
+    font-family: "Cormorant Garamond", serif;
+    font-style: italic;
+    font-size: clamp(18px, 2.6vw, 22px);
+    line-height: 1.66;
+    color: var(--mist);
+    max-width: 600px;
+    margin: 0 auto 30px;
+    opacity: 0.94;
+  }
+  .ren-foot {
+    font-family: "Cinzel", serif;
+    font-size: 13px;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--mist-dim);
+  }
+
+  /* ---------- FOOTER ---------- */
+  footer {
+    margin-top: 110px;
+    padding-top: 36px;
+    border-top: 1px solid var(--hair);
+    text-align: center;
+    font-family: "Space Mono", monospace;
+    font-size: 11.5px;
+    letter-spacing: 0.08em;
+    color: var(--mist-dim);
+    line-height: 2;
+  }
+  footer a {
+    color: var(--teal-glow);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.2s;
+  }
+  footer a:hover { border-bottom-color: var(--teal-glow); }
+  .foot-attr { color: var(--mist-dim); }
+  .foot-siblings { margin-top: 10px; }
+  .foot-agent {
+    margin-top: 14px;
+    font-style: normal;
+    color: rgba(227,230,224,0.45);
+    font-size: 11px;
+  }
+  .foot-credit {
+    margin-top: 8px;
+    color: rgba(227,230,224,0.40);
+    font-size: 11px;
+  }
+
+  @media (max-width: 600px) {
+    body { font-size: 17px; }
+    .wrap { padding: 0 18px 80px; }
+    .masthead { padding: 64px 0 28px; }
+    .roll-class { padding-left: 18px; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .river-stroke, .tower-light, .star-glow { animation: none !important; }
+  }
+</style>
+</head>
+<body>
+<div class="stars" aria-hidden="true"></div>
+<div class="wrap">
+
+  <header class="masthead">
+    <svg class="river-svg" viewBox="0 0 1100 420" preserveAspectRatio="xMidYMin slice" aria-hidden="true">
+      <path class="river-stroke" d="M -40 380
+        C 140 360, 220 300, 340 300
+        S 540 360, 640 320
+        S 800 230, 870 220
+        S 1000 180, 1010 120
+        S 980 70, 1000 40" />
+      <circle class="tower-light" cx="1000" cy="40" r="4.5" />
+      <circle class="tower-light" cx="1000" cy="40" r="9" style="opacity:0.25" />
+    </svg>
+
+    <h1 class="title">RIVERWORLD</h1>
+    <p class="subtitle" id="subtitle"></p>
+    <p class="epigraph" id="premise"></p>
+    <p class="note" id="note"></p>
+    <p class="byline">— Philip José Farmer</p>
+  </header>
+
+  <main>
+    <section>
+      <div class="section-label">The Lineage</div>
+      <div class="section-rule"></div>
+      <div class="lineage" id="lineage"></div>
+    </section>
+
+    <section>
+      <div class="section-label">The Roll</div>
+      <div class="section-rule"></div>
+      <div id="roll"></div>
+    </section>
+
+    <section id="renegade-mount"></section>
+  </main>
+
+  <footer>
+    <div class="foot-attr">ROOT0-ATTRIBUTION-v1.0 · Riverworld · David Lee Wise / ROOT0 / TriPod LLC · MIT</div>
+    <div><a href="https://github.com/DavidWise01/riverworld" target="_blank" rel="noopener">github.com/DavidWise01/riverworld</a></div>
+    <div class="foot-siblings" id="siblings">see also: </div>
+    <div class="foot-agent">every member carries a .agent — who you are · what you do · where you belong — in agents/</div>
+    <div class="foot-credit">Characters by Philip José Farmer (and history), referenced as inspiration only.</div>
+  </footer>
+
+</div>
+
+<script>
+  "use strict";
+
+  /* ===== ROSTER (embedded verbatim from roster.json) ===== */
+  const ROSTER = {
+    "company": "Riverworld",
+    "subtitle": "every human who ever lived, resurrected on one endless River",
+    "author": "Philip José Farmer",
+    "premise": "Thirty-six billion of the dead wake naked and twenty-five years old on the banks of a River ten million miles long. Grailstones feed them; death only moves them elsewhere up the River. Someone built this. The quest is to reach the tower at the headwaters and learn who, and why.",
+    "note": "The full Riverworld saga (5 novels, 1971–1983) sorted by role on the River, with the renegade X set apart. roster.json is the source of truth. Characters by Philip José Farmer (and history); inspiration only.",
+    "lineage": [
+      { "t": "To Your Scattered Bodies Go", "y": 1971 },
+      { "t": "The Fabulous Riverboat",       "y": 1971 },
+      { "t": "The Dark Design",              "y": 1977 },
+      { "t": "The Magic Labyrinth",          "y": 1980 },
+      { "t": "Gods of Riverworld",           "y": 1983 }
+    ],
+    "classes": [
+      { "id": "seekers",   "label": "The Seekers",       "spec": "questing up-River for the truth", "color": "#1f8a8a", "ink": "#fff" },
+      { "id": "builders",  "label": "The Builders",      "spec": "the riverboat and the long dream", "color": "#a9762b", "ink": "#fff" },
+      { "id": "tyrants",   "label": "The Tyrants",       "spec": "who seize the River by force",     "color": "#8a2a2a", "ink": "#fff" },
+      { "id": "secondchance","label": "The Second Chance","spec": "redemption, and the refusal of violence", "color": "#d9c46a", "ink": "#1a1a1a" },
+      { "id": "companions","label": "The Companions",    "spec": "the loyal band from the first morning", "color": "#3a7d4a", "ink": "#fff" },
+      { "id": "ethicals",  "label": "The Ethicals",      "spec": "the world-builders · the gods of Riverworld", "color": "#5a5a8a", "ink": "#fff" },
+      { "id": "renegade",  "label": "The Renegade",      "spec": "the hidden hand behind the quest", "color": "#e0c060", "ink": "#1a1a1a" }
+    ],
+    "members": [
+      { "name": "Sir Richard Francis Burton", "class": "seekers", "specialty": "Explorer, swordsman, linguist; the first to wake before the resurrection finished. He will not stop until he reaches the tower and the truth — dying a thousand deaths up the River and rising each time, still climbing." },
+      { "name": "Alice Hargreaves",           "class": "seekers", "specialty": "The real Alice of Wonderland, resurrected at twenty-five; Burton's first companion on the bank, and no one's idea of a child." },
+      { "name": "Peter Jairus Frigate",       "class": "seekers", "specialty": "A twentieth-century writer — and the author's own shadow on the River; the chronicler who keeps the record of the quest." },
+      { "name": "Nur ed-Din el-Musafir",      "class": "seekers", "specialty": "Moorish Sufi master; the calm at the band's center; teacher of the discipline the Ethicals themselves came to fear." },
+      { "name": "Samuel Clemens (Mark Twain)","class": "builders", "specialty": "Haunted by a vision of a great riverboat; bargains for the iron of a fallen meteorite to build the Not For Hire and steam ten million miles to the headwaters." },
+      { "name": "Lothar von Richthofen",      "class": "builders", "specialty": "The Red Baron's brother; airman and aristocrat; Clemens's friend and the dream's wings." },
+      { "name": "Milton Firebrass",           "class": "builders", "specialty": "Engineer of the impossible; aircraft, airship, and the long iron machine that would carry them to the tower." },
+      { "name": "King John",                  "class": "tyrants", "specialty": "The treacherous Plantagenet; steals Clemens's first riverboat and races him north; villainy resurrected wholly unchanged." },
+      { "name": "The River Kingdoms",         "class": "tyrants", "specialty": "The slaver-states and petty tyrannies that rise on the banks — proof that a second life does not, by itself, grant a second soul." },
+      { "name": "La Viro (Jacques Gillot)",   "class": "secondchance", "specialty": "Founder of the Church of the Second Chance; preaches that the resurrection is a chance to become better, and that violence forfeits it." },
+      { "name": "Hermann Göring",             "class": "secondchance", "specialty": "The Reichsmarschall, resurrected; tyrant and addict who, through the Church of the Second Chance, claws toward something like redemption — the saga's hardest, most insisted-upon mercy." },
+      { "name": "Kazz",                       "class": "companions", "specialty": "Kazzintuitruaabemss — a Paleolithic man, nearly the last of his kind; Burton's fierce, loyal friend from the very first morning." },
+      { "name": "Monat Grrautut",             "class": "companions", "specialty": "The Tau Cetan; the alien who once sterilized Earth and now wanders the River in sorrow; Burton's wisest friend." },
+      { "name": "Cyrano de Bergerac",         "class": "companions", "specialty": "The finest blade on the River, and a finer poet than his legend — proud, loyal, and exactly as advertised." },
+      { "name": "Tom Mix",                    "class": "companions", "specialty": "The cowboy film star, resurrected; rope, grin, and grit, riding the bank as if it were a back lot." },
+      { "name": "Gilgamesh",                  "class": "companions", "specialty": "King of Uruk, oldest of the named; even he is twenty-five again, naked on the grass, beginning a second time." },
+      { "name": "The Council of Twelve",      "class": "ethicals", "specialty": "The posthuman world-builders who raised every human who ever lived and watch the experiment from the tower at the headwaters." },
+      { "name": "The Agents",                 "class": "ethicals", "specialty": "Ethical operatives walking the River disguised as the resurrected, guarding the secret of why any of this was done." },
+      { "name": "X · the Mysterious Stranger","class": "renegade", "specialty": "One of the twelve who broke faith with his own kind. The hidden hand that woke Burton early, recruited a chosen few, and gave humanity a path to the truth — Loga, the renegade god of the second chance, on whom the whole saga secretly turns." }
+    ]
+  };
+
+  /* ===== helpers ===== */
+  function esc(s) {
+    return String(s)
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;")
+      .replace(/'/g, "&#39;");
+  }
+  const $ = (id) => document.getElementById(id);
+
+  /* ===== masthead ===== */
+  $("subtitle").textContent = ROSTER.subtitle;
+  $("premise").textContent  = ROSTER.premise;
+  $("note").textContent     = ROSTER.note;
+
+  /* ===== lineage ===== */
+  (function renderLineage() {
+    const html = ROSTER.lineage.map((b, i) => {
+      const hugo = i === 0
+        ? ' <span class="hugo">Hugo · 1972</span>'
+        : "";
+      return (
+        '<div class="book' + (i === 0 ? " first" : "") + '">' +
+          '<div class="bk-title">' + esc(b.t) + hugo + '</div>' +
+          '<div class="bk-year">' + esc(String(b.y)) + '</div>' +
+        '</div>'
+      );
+    }).join("");
+    $("lineage").innerHTML = html;
+  })();
+
+  /* ===== the roll ===== */
+  (function renderRoll() {
+    const roll = $("roll");
+    const mount = $("renegade-mount");
+
+    ROSTER.classes.forEach((cls) => {
+      const members = ROSTER.members.filter((m) => m.class === cls.id);
+
+      /* The Renegade gets its own monumental treatment */
+      if (cls.id === "renegade") {
+        const m = members[0];
+        if (!m) return;
+        const star =
+          '<svg class="star-mark" viewBox="0 0 64 64" aria-hidden="true">' +
+            '<path class="star-glow" d="M32 4 L36 26 L58 32 L36 38 L32 60 L28 38 L6 32 L28 26 Z" />' +
+          '</svg>';
+        mount.innerHTML =
+          '<div class="renegade">' +
+            star +
+            '<div class="ren-tag">' + esc(cls.label) + '</div>' +
+            '<div class="ren-name">' + esc(m.name) + '</div>' +
+            '<div class="ren-spec">' + esc(m.specialty) + '</div>' +
+            '<div class="ren-foot">the hidden hand behind the River</div>' +
+          '</div>';
+        return;
+      }
+
+      const section = document.createElement("section");
+      section.className = "roll-class " + esc(cls.id);
+      section.style.setProperty("--cls", cls.color);
+      section.style.setProperty("--ink", cls.ink);
+
+      const membersHtml = members.map((m) =>
+        '<div class="member">' +
+          '<div class="m-name">' + esc(m.name) + '</div>' +
+          '<div class="m-spec">' + esc(m.specialty) + '</div>' +
+        '</div>'
+      ).join("");
+
+      section.innerHTML =
+        '<div class="cls-head">' +
+          '<span class="cls-tag">' + esc(cls.id) + '</span>' +
+          '<span class="cls-label">' + esc(cls.label) + '</span>' +
+        '</div>' +
+        '<p class="cls-spec">' + esc(cls.spec) + '</p>' +
+        '<div class="members">' + membersHtml + '</div>';
+
+      roll.appendChild(section);
+    });
+  })();
+
+  /* ===== sibling links ===== */
+  (function renderSiblings() {
+    const sibs = ["Bridge Burners", "Black Company", "Wheel of Time", "Gap Cycle", "White Gold Wielder"];
+    const links = sibs.map((s) => {
+      const slug = s.toLowerCase().replace(/\s+/g, "-");
+      return '<a href="https://github.com/DavidWise01/' + esc(slug) +
+             '" target="_blank" rel="noopener">' + esc(s) + '</a>';
+    }).join(", ");
+    $("siblings").innerHTML = "see also: " + links;
+  })();
+</script>
+</body>
+</html>

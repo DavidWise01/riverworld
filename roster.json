@@ -1,0 +1,44 @@
+{
+  "company": "Riverworld",
+  "subtitle": "every human who ever lived, resurrected on one endless River",
+  "author": "Philip José Farmer",
+  "premise": "Thirty-six billion of the dead wake naked and twenty-five years old on the banks of a River ten million miles long. Grailstones feed them; death only moves them elsewhere up the River. Someone built this. The quest is to reach the tower at the headwaters and learn who, and why.",
+  "note": "The full Riverworld saga (5 novels, 1971–1983) sorted by role on the River, with the renegade X set apart. roster.json is the source of truth. Characters by Philip José Farmer (and history); inspiration only.",
+  "lineage": [
+    { "t": "To Your Scattered Bodies Go", "y": 1971 },
+    { "t": "The Fabulous Riverboat",       "y": 1971 },
+    { "t": "The Dark Design",              "y": 1977 },
+    { "t": "The Magic Labyrinth",          "y": 1980 },
+    { "t": "Gods of Riverworld",           "y": 1983 }
+  ],
+  "classes": [
+    { "id": "seekers",   "label": "The Seekers",       "spec": "questing up-River for the truth", "color": "#1f8a8a", "ink": "#fff" },
+    { "id": "builders",  "label": "The Builders",      "spec": "the riverboat and the long dream", "color": "#a9762b", "ink": "#fff" },
+    { "id": "tyrants",   "label": "The Tyrants",       "spec": "who seize the River by force",     "color": "#8a2a2a", "ink": "#fff" },
+    { "id": "secondchance","label": "The Second Chance","spec": "redemption, and the refusal of violence", "color": "#d9c46a", "ink": "#1a1a1a" },
+    { "id": "companions","label": "The Companions",    "spec": "the loyal band from the first morning", "color": "#3a7d4a", "ink": "#fff" },
+    { "id": "ethicals",  "label": "The Ethicals",      "spec": "the world-builders · the gods of Riverworld", "color": "#5a5a8a", "ink": "#fff" },
+    { "id": "renegade",  "label": "The Renegade",      "spec": "the hidden hand behind the quest", "color": "#e0c060", "ink": "#1a1a1a" }
+  ],
+  "members": [
+    { "name": "Sir Richard Francis Burton", "class": "seekers", "specialty": "Explorer, swordsman, linguist; the first to wake before the resurrection finished. He will not stop until he reaches the tower and the truth — dying a thousand deaths up the River and rising each time, still climbing." },
+    { "name": "Alice Hargreaves",           "class": "seekers", "specialty": "The real Alice of Wonderland, resurrected at twenty-five; Burton's first companion on the bank, and no one's idea of a child." },
+    { "name": "Peter Jairus Frigate",       "class": "seekers", "specialty": "A twentieth-century writer — and the author's own shadow on the River; the chronicler who keeps the record of the quest." },
+    { "name": "Nur ed-Din el-Musafir",      "class": "seekers", "specialty": "Moorish Sufi master; the calm at the band's center; teacher of the discipline the Ethicals themselves came to fear." },
+    { "name": "Samuel Clemens (Mark Twain)","class": "builders", "specialty": "Haunted by a vision of a great riverboat; bargains for the iron of a fallen meteorite to build the Not For Hire and steam ten million miles to the headwaters." },
+    { "name": "Lothar von Richthofen",      "class": "builders", "specialty": "The Red Baron's brother; airman and aristocrat; Clemens's friend and the dream's wings." },
+    { "name": "Milton Firebrass",           "class": "builders", "specialty": "Engineer of the impossible; aircraft, airship, and the long iron machine that would carry them to the tower." },
+    { "name": "King John",                  "class": "tyrants", "specialty": "The treacherous Plantagenet; steals Clemens's first riverboat and races him north; villainy resurrected wholly unchanged." },
+    { "name": "The River Kingdoms",         "class": "tyrants", "specialty": "The slaver-states and petty tyrannies that rise on the banks — proof that a second life does not, by itself, grant a second soul." },
+    { "name": "La Viro (Jacques Gillot)",   "class": "secondchance", "specialty": "Founder of the Church of the Second Chance; preaches that the resurrection is a chance to become better, and that violence forfeits it." },
+    { "name": "Hermann Göring",             "class": "secondchance", "specialty": "The Reichsmarschall, resurrected; tyrant and addict who, through the Church of the Second Chance, claws toward something like redemption — the saga's hardest, most insisted-upon mercy." },
+    { "name": "Kazz",                       "class": "companions", "specialty": "Kazzintuitruaabemss — a Paleolithic man, nearly the last of his kind; Burton's fierce, loyal friend from the very first morning." },
+    { "name": "Monat Grrautut",             "class": "companions", "specialty": "The Tau Cetan; the alien who once sterilized Earth and now wanders the River in sorrow; Burton's wisest friend." },
+    { "name": "Cyrano de Bergerac",         "class": "companions", "specialty": "The finest blade on the River, and a finer poet than his legend — proud, loyal, and exactly as advertised." },
+    { "name": "Tom Mix",                    "class": "companions", "specialty": "The cowboy film star, resurrected; rope, grin, and grit, riding the bank as if it were a back lot." },
+    { "name": "Gilgamesh",                  "class": "companions", "specialty": "King of Uruk, oldest of the named; even he is twenty-five again, naked on the grass, beginning a second time." },
+    { "name": "The Council of Twelve",      "class": "ethicals", "specialty": "The posthuman world-builders who raised every human who ever lived and watch the experiment from the tower at the headwaters." },
+    { "name": "The Agents",                 "class": "ethicals", "specialty": "Ethical operatives walking the River disguised as the resurrected, guarding the secret of why any of this was done." },
+    { "name": "X · the Mysterious Stranger","class": "renegade", "specialty": "One of the twelve who broke faith with his own kind. The hidden hand that woke Burton early, recruited a chosen few, and gave humanity a path to the truth — Loga, the renegade god of the second chance, on whom the whole saga secretly turns." }
+  ]
+}
