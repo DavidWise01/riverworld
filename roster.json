@@ -3,42 +3,289 @@
   "subtitle": "every human who ever lived, resurrected on one endless River",
   "author": "Philip José Farmer",
   "premise": "Thirty-six billion of the dead wake naked and twenty-five years old on the banks of a River ten million miles long. Grailstones feed them; death only moves them elsewhere up the River. Someone built this. The quest is to reach the tower at the headwaters and learn who, and why.",
-  "note": "The full Riverworld saga (5 novels, 1971–1983) sorted by role on the River, with the renegade X set apart. roster.json is the source of truth. Characters by Philip José Farmer (and history); inspiration only.",
+  "note": "The full Riverworld saga (5 novels, 1971–1983) sorted by role on the River, with the renegade X set apart. roster.json is the source of truth. Characters by Philip José Farmer (and history); inspiration only. Every ACI now carries the full DLW tag with an authored six-W .spun.",
   "lineage": [
-    { "t": "To Your Scattered Bodies Go", "y": 1971 },
-    { "t": "The Fabulous Riverboat",       "y": 1971 },
-    { "t": "The Dark Design",              "y": 1977 },
-    { "t": "The Magic Labyrinth",          "y": 1980 },
-    { "t": "Gods of Riverworld",           "y": 1983 }
+    {
+      "t": "To Your Scattered Bodies Go",
+      "y": 1971
+    },
+    {
+      "t": "The Fabulous Riverboat",
+      "y": 1971
+    },
+    {
+      "t": "The Dark Design",
+      "y": 1977
+    },
+    {
+      "t": "The Magic Labyrinth",
+      "y": 1980
+    },
+    {
+      "t": "Gods of Riverworld",
+      "y": 1983
+    }
   ],
   "classes": [
-    { "id": "seekers",   "label": "The Seekers",       "spec": "questing up-River for the truth", "color": "#1f8a8a", "ink": "#fff" },
-    { "id": "builders",  "label": "The Builders",      "spec": "the riverboat and the long dream", "color": "#a9762b", "ink": "#fff" },
-    { "id": "tyrants",   "label": "The Tyrants",       "spec": "who seize the River by force",     "color": "#8a2a2a", "ink": "#fff" },
-    { "id": "secondchance","label": "The Second Chance","spec": "redemption, and the refusal of violence", "color": "#d9c46a", "ink": "#1a1a1a" },
-    { "id": "companions","label": "The Companions",    "spec": "the loyal band from the first morning", "color": "#3a7d4a", "ink": "#fff" },
-    { "id": "ethicals",  "label": "The Ethicals",      "spec": "the world-builders · the gods of Riverworld", "color": "#5a5a8a", "ink": "#fff" },
-    { "id": "renegade",  "label": "The Renegade",      "spec": "the hidden hand behind the quest", "color": "#e0c060", "ink": "#1a1a1a" }
+    {
+      "id": "seekers",
+      "label": "The Seekers",
+      "spec": "questing up-River for the truth",
+      "color": "#1f8a8a",
+      "ink": "#fff"
+    },
+    {
+      "id": "builders",
+      "label": "The Builders",
+      "spec": "the riverboat and the long dream",
+      "color": "#a9762b",
+      "ink": "#fff"
+    },
+    {
+      "id": "tyrants",
+      "label": "The Tyrants",
+      "spec": "who seize the River by force",
+      "color": "#8a2a2a",
+      "ink": "#fff"
+    },
+    {
+      "id": "secondchance",
+      "label": "The Second Chance",
+      "spec": "redemption, and the refusal of violence",
+      "color": "#d9c46a",
+      "ink": "#1a1a1a"
+    },
+    {
+      "id": "companions",
+      "label": "The Companions",
+      "spec": "the loyal band from the first morning",
+      "color": "#3a7d4a",
+      "ink": "#fff"
+    },
+    {
+      "id": "ethicals",
+      "label": "The Ethicals",
+      "spec": "the world-builders · the gods of Riverworld",
+      "color": "#5a5a8a",
+      "ink": "#fff"
+    },
+    {
+      "id": "renegade",
+      "label": "The Renegade",
+      "spec": "the hidden hand behind the quest",
+      "color": "#e0c060",
+      "ink": "#1a1a1a"
+    }
   ],
   "members": [
-    { "name": "Sir Richard Francis Burton", "class": "seekers", "specialty": "Explorer, swordsman, linguist; the first to wake before the resurrection finished. He will not stop until he reaches the tower and the truth — dying a thousand deaths up the River and rising each time, still climbing." },
-    { "name": "Alice Hargreaves",           "class": "seekers", "specialty": "The real Alice of Wonderland, resurrected at twenty-five; Burton's first companion on the bank, and no one's idea of a child." },
-    { "name": "Peter Jairus Frigate",       "class": "seekers", "specialty": "A twentieth-century writer — and the author's own shadow on the River; the chronicler who keeps the record of the quest." },
-    { "name": "Nur ed-Din el-Musafir",      "class": "seekers", "specialty": "Moorish Sufi master; the calm at the band's center; teacher of the discipline the Ethicals themselves came to fear." },
-    { "name": "Samuel Clemens (Mark Twain)","class": "builders", "specialty": "Haunted by a vision of a great riverboat; bargains for the iron of a fallen meteorite to build the Not For Hire and steam ten million miles to the headwaters." },
-    { "name": "Lothar von Richthofen",      "class": "builders", "specialty": "The Red Baron's brother; airman and aristocrat; Clemens's friend and the dream's wings." },
-    { "name": "Milton Firebrass",           "class": "builders", "specialty": "Engineer of the impossible; aircraft, airship, and the long iron machine that would carry them to the tower." },
-    { "name": "King John",                  "class": "tyrants", "specialty": "The treacherous Plantagenet; steals Clemens's first riverboat and races him north; villainy resurrected wholly unchanged." },
-    { "name": "The River Kingdoms",         "class": "tyrants", "specialty": "The slaver-states and petty tyrannies that rise on the banks — proof that a second life does not, by itself, grant a second soul." },
-    { "name": "La Viro (Jacques Gillot)",   "class": "secondchance", "specialty": "Founder of the Church of the Second Chance; preaches that the resurrection is a chance to become better, and that violence forfeits it." },
-    { "name": "Hermann Göring",             "class": "secondchance", "specialty": "The Reichsmarschall, resurrected; tyrant and addict who, through the Church of the Second Chance, claws toward something like redemption — the saga's hardest, most insisted-upon mercy." },
-    { "name": "Kazz",                       "class": "companions", "specialty": "Kazzintuitruaabemss — a Paleolithic man, nearly the last of his kind; Burton's fierce, loyal friend from the very first morning." },
-    { "name": "Monat Grrautut",             "class": "companions", "specialty": "The Tau Cetan; the alien who once sterilized Earth and now wanders the River in sorrow; Burton's wisest friend." },
-    { "name": "Cyrano de Bergerac",         "class": "companions", "specialty": "The finest blade on the River, and a finer poet than his legend — proud, loyal, and exactly as advertised." },
-    { "name": "Tom Mix",                    "class": "companions", "specialty": "The cowboy film star, resurrected; rope, grin, and grit, riding the bank as if it were a back lot." },
-    { "name": "Gilgamesh",                  "class": "companions", "specialty": "King of Uruk, oldest of the named; even he is twenty-five again, naked on the grass, beginning a second time." },
-    { "name": "The Council of Twelve",      "class": "ethicals", "specialty": "The posthuman world-builders who raised every human who ever lived and watch the experiment from the tower at the headwaters." },
-    { "name": "The Agents",                 "class": "ethicals", "specialty": "Ethical operatives walking the River disguised as the resurrected, guarding the secret of why any of this was done." },
-    { "name": "X · the Mysterious Stranger","class": "renegade", "specialty": "One of the twelve who broke faith with his own kind. The hidden hand that woke Burton early, recruited a chosen few, and gave humanity a path to the truth — Loga, the renegade god of the second chance, on whom the whole saga secretly turns." }
+    {
+      "name": "Sir Richard Francis Burton",
+      "class": "seekers",
+      "specialty": "Explorer, swordsman, linguist; the first to wake before the resurrection finished. He will not stop until he reaches the tower and the truth — dying a thousand deaths up the River and rising each time, still climbing.",
+      "who": "The Victorian explorer, swordsman, and master linguist, first of the dead to wake before the resurrection was finished.",
+      "what": "Lead Seeker — the questing spearhead driving up-River toward the tower and the truth.",
+      "where": "Everywhere along the ten-million-mile River, ever northward toward the headwaters.",
+      "why": "He cannot abide an unsolved mystery, and the secret of who built this world and why is the greatest unsolved mystery of all.",
+      "when": "From the very first morning of the resurrection through the final reckoning at the tower.",
+      "how": "By questing, fighting, and dying a thousand deaths up the River, rising each time and climbing on."
+    },
+    {
+      "name": "Alice Hargreaves",
+      "class": "seekers",
+      "specialty": "The real Alice of Wonderland, resurrected at twenty-five; Burton's first companion on the bank, and no one's idea of a child.",
+      "who": "The real-life Alice who inspired Wonderland, resurrected at twenty-five rather than as a child.",
+      "what": "First Companion — the partner who joins Burton on the bank at the dawn of the new world.",
+      "where": "At Burton's side on the riverbank and on the long journey north.",
+      "why": "To make her own way in a second life, on her own terms and no one else's.",
+      "when": "From the opening morning of the resurrection onward.",
+      "how": "With composure, dignity, and a will that refuses to be mistaken for the child of the storybooks."
+    },
+    {
+      "name": "Peter Jairus Frigate",
+      "class": "seekers",
+      "specialty": "A twentieth-century writer — and the author's own shadow on the River; the chronicler who keeps the record of the quest.",
+      "who": "A twentieth-century writer who serves as the author's own shadow walking the River.",
+      "what": "Chronicler — the keeper of the record of the quest.",
+      "where": "Among Burton's band, notebook of the mind always open.",
+      "why": "To witness and preserve the story of the greatest journey ever undertaken.",
+      "when": "Throughout the up-River quest from early in the saga.",
+      "how": "By observing, remembering, and setting down the chronicle of all that passes."
+    },
+    {
+      "name": "Nur ed-Din el-Musafir",
+      "class": "seekers",
+      "specialty": "Moorish Sufi master; the calm at the band's center; teacher of the discipline the Ethicals themselves came to fear.",
+      "who": "A Moorish Sufi master, the still and centering presence of the band.",
+      "what": "Teacher — the spiritual anchor whose discipline even the Ethicals came to fear.",
+      "where": "At the calm center of the questing company.",
+      "why": "To guide companions toward mastery of self, the one path the world-builders could not foresee.",
+      "when": "Through the long middle and late stages of the quest.",
+      "how": "By the quiet discipline of Sufi practice, teaching by stillness rather than force."
+    },
+    {
+      "name": "Samuel Clemens (Mark Twain)",
+      "class": "builders",
+      "specialty": "Haunted by a vision of a great riverboat; bargains for the iron of a fallen meteorite to build the Not For Hire and steam ten million miles to the headwaters.",
+      "who": "Samuel Clemens, the American humorist known as Mark Twain, haunted by a vision of a great riverboat.",
+      "what": "Builder-in-chief — architect of the steamboat Not For Hire bound for the headwaters.",
+      "where": "At the fallen meteorite and the boatyards along the bank.",
+      "why": "Driven by the dream of the riverboat and the longing to reach the tower at the source.",
+      "when": "Through the boat-building heart of the saga.",
+      "how": "By bargaining for the iron of a fallen meteorite and forging it into a vessel to steam ten million miles."
+    },
+    {
+      "name": "Lothar von Richthofen",
+      "class": "builders",
+      "specialty": "The Red Baron's brother; airman and aristocrat; Clemens's friend and the dream's wings.",
+      "who": "The Red Baron's brother, an airman and aristocrat of the Great War.",
+      "what": "Aviator — the wings of the builders' dream and Clemens's loyal friend.",
+      "where": "Aloft above the River and aboard the great riverboat.",
+      "why": "For loyalty to Clemens and the thrill of flight over a world without end.",
+      "when": "During the building and voyage of the riverboat.",
+      "how": "By flying the machines the builders raise from River-metal and ingenuity."
+    },
+    {
+      "name": "Milton Firebrass",
+      "class": "builders",
+      "specialty": "Engineer of the impossible; aircraft, airship, and the long iron machine that would carry them to the tower.",
+      "who": "An engineer of the impossible, master of machines beyond his era.",
+      "what": "Chief engineer — maker of aircraft, airship, and the long iron machine bound for the tower.",
+      "where": "In the workshops and hangars of the builders' enterprise.",
+      "why": "To bend River-metal and salvaged science toward reaching the headwaters.",
+      "when": "Through the construction era of the saga.",
+      "how": "By engineering flying craft and vessels from scarce materials and sheer skill."
+    },
+    {
+      "name": "King John",
+      "class": "tyrants",
+      "specialty": "The treacherous Plantagenet; steals Clemens's first riverboat and races him north; villainy resurrected wholly unchanged.",
+      "who": "John Plantagenet, the treacherous medieval king of England, resurrected wholly unchanged.",
+      "what": "Usurper — the tyrant who steals Clemens's first riverboat and races him north.",
+      "where": "Aboard the stolen vessel, fleeing and scheming up the River.",
+      "why": "For power and dominion, the same appetites that ruined his first life.",
+      "when": "During the riverboat-building and pursuit phase of the saga.",
+      "how": "By treachery, betrayal, and the seizure of what others built."
+    },
+    {
+      "name": "The River Kingdoms",
+      "class": "tyrants",
+      "specialty": "The slaver-states and petty tyrannies that rise on the banks — proof that a second life does not, by itself, grant a second soul.",
+      "who": "The slaver-states and petty tyrannies that rise along the banks.",
+      "what": "Oppressor-states — living proof that a second life grants no second soul by itself.",
+      "where": "Scattered across the endless banks of the River.",
+      "why": "To seize grailstones, labor, and power in a world meant to offer everyone a fresh start.",
+      "when": "Throughout the saga, wherever the questers pass.",
+      "how": "By conquest, enslavement, and the old cruelties carried over from Earth."
+    },
+    {
+      "name": "La Viro (Jacques Gillot)",
+      "class": "secondchance",
+      "specialty": "Founder of the Church of the Second Chance; preaches that the resurrection is a chance to become better, and that violence forfeits it.",
+      "who": "Jacques Gillot, founder of the Church of the Second Chance.",
+      "what": "Prophet — preacher that the resurrection is an offer to become better.",
+      "where": "In the temples and missions of the Church along the River.",
+      "why": "Because the second life is a chance for redemption that violence forfeits.",
+      "when": "Across the saga as the Church spreads along the banks.",
+      "how": "By preaching nonviolence and the discipline of renouncing harm."
+    },
+    {
+      "name": "Hermann Göring",
+      "class": "secondchance",
+      "specialty": "The Reichsmarschall, resurrected; tyrant and addict who, through the Church of the Second Chance, claws toward something like redemption — the saga's hardest, most insisted-upon mercy.",
+      "who": "The Nazi Reichsmarschall, resurrected as the tyrant and addict he was.",
+      "what": "Penitent — the saga's hardest case, clawing through the Church toward something like redemption.",
+      "where": "From the tyrannies of the bank to the missions of the Second Chance.",
+      "why": "To escape his own ruin and reach the redemption the Church insists even he may earn.",
+      "when": "Across the long arc from his early River-tyranny to his slow turning.",
+      "how": "By the agonizing discipline of the Church of the Second Chance, falling and rising again."
+    },
+    {
+      "name": "Kazz",
+      "class": "companions",
+      "specialty": "Kazzintuitruaabemss — a Paleolithic man, nearly the last of his kind; Burton's fierce, loyal friend from the very first morning.",
+      "who": "Kazzintuitruaabemss, a Paleolithic man and nearly the last of his ancient kind.",
+      "what": "First friend — Burton's fierce, loyal companion from the very first morning.",
+      "where": "At Burton's side on the bank and through the quest.",
+      "why": "Out of fierce loyalty to the man who first stood with him in the new world.",
+      "when": "From the opening morning of the resurrection onward.",
+      "how": "By raw strength, courage, and the unbreakable bond of an old loyalty."
+    },
+    {
+      "name": "Monat Grrautut",
+      "class": "companions",
+      "specialty": "The Tau Cetan; the alien who once sterilized Earth and now wanders the River in sorrow; Burton's wisest friend.",
+      "who": "The Tau Cetan, the alien who once sterilized Earth and now wanders the River in sorrow.",
+      "what": "Wise counselor — Burton's wisest friend and conscience.",
+      "where": "Among Burton's band along the River.",
+      "why": "Out of sorrow and a longing to atone for the destruction his people once wrought.",
+      "when": "From early in the quest alongside Burton.",
+      "how": "By counsel, wisdom, and the long perspective of a being from beyond Earth."
+    },
+    {
+      "name": "Cyrano de Bergerac",
+      "class": "companions",
+      "specialty": "The finest blade on the River, and a finer poet than his legend — proud, loyal, and exactly as advertised.",
+      "who": "The historical duelist and poet, finer with a blade and a verse than his legend allows.",
+      "what": "Champion — the finest swordsman on the River and a true poet.",
+      "where": "At the band's side wherever steel or wit is needed.",
+      "why": "For honor, loyalty, and the joy of living fully as exactly who he is.",
+      "when": "Through the companionship of the quest.",
+      "how": "By peerless swordsmanship paired with genuine poetry, proud and loyal."
+    },
+    {
+      "name": "Tom Mix",
+      "class": "companions",
+      "specialty": "The cowboy film star, resurrected; rope, grin, and grit, riding the bank as if it were a back lot.",
+      "who": "The American cowboy film star, resurrected on the River.",
+      "what": "Frontiersman — the rider who treats the endless bank like a back lot.",
+      "where": "Along the banks of the River.",
+      "why": "To live the second life with the same easy grit and showmanship as the first.",
+      "when": "Through his stretch of the companions' journey.",
+      "how": "By rope, grin, and grit, carrying his on-screen daring into a real world."
+    },
+    {
+      "name": "Gilgamesh",
+      "class": "companions",
+      "specialty": "King of Uruk, oldest of the named; even he is twenty-five again, naked on the grass, beginning a second time.",
+      "who": "The ancient king of Uruk, oldest of the named, made twenty-five again.",
+      "what": "Ancient king — the eldest legend beginning a second time among the resurrected.",
+      "where": "Naked on the grass of the bank, like every other risen soul.",
+      "why": "To begin anew, the immortality he once chased now granted to all the dead at once.",
+      "when": "From the resurrection morning that levels even the oldest of kings.",
+      "how": "By starting over from nothing, stripped of throne and legend alike."
+    },
+    {
+      "name": "The Council of Twelve",
+      "class": "ethicals",
+      "specialty": "The posthuman world-builders who raised every human who ever lived and watch the experiment from the tower at the headwaters.",
+      "who": "The posthuman world-builders who raised every human who ever lived.",
+      "what": "Architects — the gods of Riverworld who watch the experiment from the tower.",
+      "where": "In the tower at the headwaters at the source of the River.",
+      "why": "To shepherd the resurrected toward an ethical end the saga slowly unveils.",
+      "when": "Across the whole saga, presiding from before the first morning.",
+      "how": "By raising the dead with vast technology and observing from the headwaters."
+    },
+    {
+      "name": "The Agents",
+      "class": "ethicals",
+      "specialty": "Ethical operatives walking the River disguised as the resurrected, guarding the secret of why any of this was done.",
+      "who": "Ethical operatives who walk the River disguised as ordinary resurrected souls.",
+      "what": "Watchers — the hidden guardians of the secret of why any of this was done.",
+      "where": "Among the resurrected anywhere along the River, indistinguishable from them.",
+      "why": "To guard the world-builders' purpose and steer the experiment from within.",
+      "when": "Throughout the saga, unseen until the quest exposes them.",
+      "how": "By disguise, infiltration, and quiet intervention among the resurrected."
+    },
+    {
+      "name": "X · the Mysterious Stranger",
+      "class": "renegade",
+      "specialty": "One of the twelve who broke faith with his own kind. The hidden hand that woke Burton early, recruited a chosen few, and gave humanity a path to the truth — Loga, the renegade god of the second chance, on whom the whole saga secretly turns.",
+      "who": "Loga, one of the Twelve who broke faith with his own kind — the renegade god of the second chance.",
+      "what": "Hidden hand — the secret architect on whom the whole saga turns.",
+      "where": "Behind the scenes of the quest and within the tower itself.",
+      "why": "Because he broke faith with his fellow Ethicals to give humanity a true path to the truth.",
+      "when": "From before Burton's early waking through the saga's final revelation.",
+      "how": "By waking Burton early, recruiting a chosen few, and secretly guiding them toward the tower."
+    }
   ]
 }

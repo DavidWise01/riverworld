@@ -1,20 +1,32 @@
 ---
-name: The River Kingdoms
+aci: The River Kingdoms
 class: The Tyrants
-who: The River Kingdoms — The Tyrants of Riverworld
-do: The slaver-states and petty tyrannies that rise on the banks — proof that a second life does not, by itself, grant a second soul.
-belong: The Tyrants · who seize the River by force
+what: Oppressor-states — living proof that a second life grants no second soul by itself.
+why: To seize grailstones, labor, and power in a world meant to offer everyone a fresh start.
+how: By conquest, enslavement, and the old cruelties carried over from Earth.
+where: Scattered across the endless banks of the River.
+silicon_badge: the-river-kingdoms.png
+carbon_badge: the-river-kingdoms.tiff
+spun: the-river-kingdoms.spun
+credit: the-river-kingdoms.1099
 attribution: ROOT0-ATTRIBUTION-v1.0
 license: MIT
 ---
 
-# The River Kingdoms
+# The River Kingdoms — an artfully crafted intellect
 
-**who you are —** The River Kingdoms — The Tyrants of Riverworld
+![essence of The River Kingdoms](the-river-kingdoms.png)
+<!-- carbon badge (8-bit portrait): the-river-kingdoms.tiff -->
 
-**what you do —** The slaver-states and petty tyrannies that rise on the banks — proof that a second life does not, by itself, grant a second soul.
+**what —** Oppressor-states — living proof that a second life grants no second soul by itself.
 
-**where you belong —** The Tyrants · who seize the River by force
+**why —** To seize grailstones, labor, and power in a world meant to offer everyone a fresh start.
+
+**how —** By conquest, enslavement, and the old cruelties carried over from Earth.
+
+**where —** Scattered across the endless banks of the River.
+
+*class: The Tyrants · who seize the River by force · full weave in the-river-kingdoms.spun · credit in the-river-kingdoms.1099*
 
 ---
-ROOT0-ATTRIBUTION-v1.0 · The River Kingdoms · Riverworld (Philip José Farmer, inspiration only) · David Lee Wise / ROOT0 / TriPod LLC · MIT
+ROOT0-ATTRIBUTION-v1.0 · The River Kingdoms · Riverworld (Philip José Farmer, inspiration only) · David Lee Wise (ROOT0) · MIT
