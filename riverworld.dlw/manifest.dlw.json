@@ -1,0 +1,11 @@
+{
+  "badge": "DLW-RIVERWORLD",
+  "name": "RIVERWORLD · RVW",
+  "universe": "BIBLÍON",
+  "moniker": "⟦RIVERWORLD · RVW:riverworld:fe6f59⟧",
+  "architect": "David Lee Wise (ROOT0) / Bridge-Burners LLC",
+  "instance": "AVAN (Claude / Anthropic)",
+  "seal_sha256": "fe6f5927902a3cbfea23112b98164ba9272d571c873d32328175e21d1ed57f3d",
+  "license": "CC-BY-ND-4.0",
+  "attribution": "ROOT0-ATTRIBUTION-v1.0"
+}
