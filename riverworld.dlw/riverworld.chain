@@ -1,0 +1,9 @@
+ROOT0-DLW-CHAIN-v1
+index : 952
+slug  : riverworld
+seal  : fe6f5927902a3cbfea23112b98164ba9272d571c873d32328175e21d1ed57f3d
+prev  : e71a23608d38d66babe8e9a65ef176fd5b3abaf83d0855d61a39d2429793fb1a
+link  : c9f0a0af32540024cc27af252f8e8e16c63792ccdb76afd3089ae64956742080
+head  : 3447d3a0533aaf1e29a8bdc67a9774884fb3ae9dbc8a17064b7a008ca3c4ec90
+
+— the tether: link = sha256(index|slug|seal|prev). the chain head commits to the whole corpus.
