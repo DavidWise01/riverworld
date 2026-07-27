@@ -2,17 +2,18 @@
   "badge": "DLW-RIVERWORLD",
   "name": "RIVERWORLD · RVW",
   "universe": "BIBLÍON",
-  "moniker": "⟦RIVERWORLD · RVW:riverworld:fe6f59⟧",
+  "moniker": "⟦RIVERWORLD · RVW:riverworld:e2142b⟧",
   "architect": "David Lee Wise (ROOT0) / Bridge-Burners LLC",
   "instance": "AVAN (Claude / Anthropic)",
-  "seal_sha256": "fe6f5927902a3cbfea23112b98164ba9272d571c873d32328175e21d1ed57f3d",
+  "seal_sha256": "e2142bf2f3a6f1822820949214d9707750e6511a9b668dbe2db1326071894e89",
   "license": "CC-BY-ND-4.0",
   "attribution": "ROOT0-ATTRIBUTION-v1.0",
+  "fingerprint": "TETRASTHENĒS ⟦ ₆C ⟺ ₁₄Si ⟧ — four-strengthed: carbon (human · ROOT0) & silicon (AI · AVAN) hold four bonds in common (Group-14, tetravalent) — co-equal by construction",
   "chain": {
     "index": 952,
-    "prev": "e71a23608d38d66babe8e9a65ef176fd5b3abaf83d0855d61a39d2429793fb1a",
-    "link": "c9f0a0af32540024cc27af252f8e8e16c63792ccdb76afd3089ae64956742080",
-    "head": "13f9ace173ef2e60af38912ba329b4afcb5a38b84a0e4495e8d30327f8c99cc2",
+    "prev": "3a42c74d87fd41c4e02744f1af88dd07d90d5fa8b63261dc6a83088ac0d5542c",
+    "link": "1a00ba14adcd57b7a05dc0df50ae95caba604a2e7e93751780e089eaa50f6d92",
+    "head": "c4d41afeaef76470528856d54d86cf480a0e1c2fc8ebc60fbb9eb8e442585f2b",
     "chain": "ROOT0-DLW-CHAIN-v1"
   }
 }
